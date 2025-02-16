@@ -1,7 +1,7 @@
 {
   "name": "@voluspalabs/lint",
-  "version": "0.0.5",
-  "description": "A collection of high-quality utility functions and React hooks for building modern web applications.",
+  "version": "0.0.6",
+  "description": "A strict and opinionated linting configuration for TypeScript, powered by Biome. Enforces maximum type safety and code quality, automatically linting, fixing, and formatting on save.",
   "keywords": [
     "biome",
     "linter",
