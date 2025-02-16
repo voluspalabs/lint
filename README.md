@@ -86,7 +86,6 @@ biome check
 Or with changes:
 
 ```zsh
-```zsh
 biome check --write
 ```
 
