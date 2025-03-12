@@ -103,13 +103,13 @@
       },
       "nursery": {
         "all": true,
-        "noCommonJs": "off",
+        "noCommonJs": "warn",
         "noProcessEnv": "off",
         "noSecrets": "off",
         "useComponentExportOnlyModules": "off",
         "useExplicitType": "off",
         "useImportRestrictions": "off",
-        "useConsistentCurlyBraces": "off",
+        "useConsistentCurlyBraces": "error",
         "useSortedClasses": {
           "fix": "safe",
           "level": "error",
@@ -120,8 +120,8 @@
         }
       },
       "performance": {
-        "noBarrelFile": "off",
-        "noReExportAll": "off"
+        "noBarrelFile": "warn",
+        "noReExportAll": "warn"
       },
       "security": {
         "noDangerouslySetInnerHtmlWithChildren": "error"
