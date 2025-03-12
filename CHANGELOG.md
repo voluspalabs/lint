@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.8
+
+### Patch Changes
+
+- 0133e06: Changes in configuration
+
 ## 0.0.7
 
 ### Patch Changes
