@@ -109,7 +109,7 @@
         "useComponentExportOnlyModules": "off",
         "useExplicitType": "off",
         "useImportRestrictions": "off",
-        "useConsistentCurlyBraces": "error",
+        "useConsistentCurlyBraces": "off",
         "useSortedClasses": {
           "fix": "safe",
           "level": "error",
