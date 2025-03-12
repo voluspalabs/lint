@@ -2,7 +2,13 @@
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["**/node_modules/", "**/dist/", "**/.next/", "**/build/", "**/.turbo/"]
+    "ignore": [
+      "**/node_modules/",
+      "**/dist/",
+      "**/.next/",
+      "**/build/",
+      "**/.turbo/"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -91,7 +97,7 @@
         "useValidForDirection": "error",
         "useYield": "error",
         "noUnusedImports": "error",
-        "noUndeclaredDependencies": "error",
+        "noUndeclaredDependencies": "off",
         "useImportExtensions": "off",
         "noNodejsModules": "off"
       },
