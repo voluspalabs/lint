@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.9
+
+### Patch Changes
+
+- 32a74fd: Nursery and performance rule updates
+
 ## 0.0.8
 
 ### Patch Changes
