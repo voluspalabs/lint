@@ -2,12 +2,7 @@
   "name": "@voluspalabs/lint",
   "version": "0.0.7",
   "description": "A strict and opinionated linting configuration for TypeScript, powered by Biome. Enforces maximum type safety and code quality, automatically linting, fixing, and formatting on save.",
-  "keywords": [
-    "biome",
-    "linter",
-    "formatter",
-    "fixer"
-  ],
+  "keywords": ["biome", "linter", "formatter", "fixer"],
   "homepage": "https://github.com/voluspalabs/lint",
   "bugs": {
     "url": "https://github.com/voluspalabs/lint/issues"
@@ -21,9 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/voluspalabs/lint.git"
   },
-  "files": [
-    "biome.json"
-  ],
+  "files": ["biome.json"],
   "type": "module",
   "license": "MIT",
   "main": "./biome.json",
@@ -31,12 +24,12 @@
     "clean": "bunx del-cli ./dist",
     "ci": "bun run biome ci",
     "check-format": "biome check --write",
-    "new-version": "changeset",
+    "ver": "changeset",
     "local-release": "bun run ci && changeset version && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.27.12"
+    "@changesets/cli": "^2.28.1"
   },
   "engines": {
     "node": ">=20.0.0"
