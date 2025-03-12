@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.10
+
+### Patch Changes
+
+- a9c61db: Updated rule useConsistentCurlyBraces
+
 ## 0.0.9
 
 ### Patch Changes
