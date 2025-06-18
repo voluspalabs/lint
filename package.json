@@ -35,8 +35,8 @@
     "local-release": "bun run ci && changeset version && changeset publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.28.1"
+    "@biomejs/biome": "^2.0.0",
+    "@changesets/cli": "^2.29.4"
   },
   "engines": {
     "node": ">=20.0.0"
