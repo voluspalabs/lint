@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.11
+
+### Patch Changes
+
+- 6db6efa: Updated biome to v2
+
 ## 0.0.10
 
 ### Patch Changes
