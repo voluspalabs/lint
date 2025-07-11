@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.13
+
+### Patch Changes
+
+- 8fcab07: Biome update
+
 ## 0.0.12
 
 ### Patch Changes
