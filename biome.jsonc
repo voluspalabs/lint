@@ -80,7 +80,8 @@
         "noBannedTypes": "error",
         "noCommaOperator": "error",
         "noEmptyTypeParameters": "error",
-        "noExcessiveCognitiveComplexity": "error",
+        //! This is intentionally off.
+        "noExcessiveCognitiveComplexity": "off",
         "noExcessiveNestedTestSuites": "error",
         "noExtraBooleanCast": "error",
         "noFlatMapIdentity": "error",
@@ -184,7 +185,8 @@
         "noNoninteractiveElementInteractions": "error",
         "noReactPropAssign": "error",
         "noRestrictedElements": "error",
-        "noShadow": "error",
+        //! This is intentionally off.
+        "noShadow": "off",
         "noTsIgnore": "error",
         "noUnwantedPolyfillio": "error",
         "noUselessBackrefInRegex": "error",
@@ -249,7 +251,8 @@
         "noInferrableTypes": "error",
         "noNamespace": "error",
         "noNegationElse": "error",
-        "noNestedTernary": "error",
+        //! This is intentionally off.
+        "noNestedTernary": "off",
         "noNonNullAssertion": "error",
         "noParameterAssign": "error",
         "noParameterProperties": "error",
