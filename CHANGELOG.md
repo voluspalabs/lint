@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.17
+
+### Patch Changes
+
+- a9eafad: Updated noExcessiveCognitiveComplexity
+
 ## 0.0.16
 
 ### Patch Changes

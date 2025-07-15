@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/lint",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "A strict and opinionated linting configuration for TypeScript, powered by Biome. Enforces maximum type safety and code quality, automatically linting, fixing, and formatting on save.",
   "keywords": [
     "biome",
