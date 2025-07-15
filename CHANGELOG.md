@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.16
+
+### Patch Changes
+
+- 953c3e8: Updated noShadow
+
 ## 0.0.15
 
 ### Patch Changes
