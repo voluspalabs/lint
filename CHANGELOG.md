@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.14
+
+### Patch Changes
+
+- e03bb02: New config changes, maybe can be breaking for some codebases
+
 ## 0.0.13
 
 ### Patch Changes
