@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/lint",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A strict and opinionated linting configuration for TypeScript, powered by Biome. Enforces maximum type safety and code quality, automatically linting, fixing, and formatting on save.",
   "keywords": [
     "biome",
@@ -22,11 +22,11 @@
     "url": "git+https://github.com/voluspalabs/lint.git"
   },
   "files": [
-    "biome.json"
+    "biome.jsonc"
   ],
   "type": "module",
   "license": "MIT",
-  "main": "./biome.json",
+  "main": "./biome.jsonc",
   "scripts": {
     "clean": "bunx del-cli ./dist",
     "ci": "bun run biome ci",

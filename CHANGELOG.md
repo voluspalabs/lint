@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.15
+
+### Patch Changes
+
+- 44aa641: Fixed error in package.json
+
 ## 0.0.14
 
 ### Patch Changes
