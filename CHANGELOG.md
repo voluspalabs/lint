@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.18
+
+### Patch Changes
+
+- caa93c2: Updated rules
+
 ## 0.0.17
 
 ### Patch Changes
