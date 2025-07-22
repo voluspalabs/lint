@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.19
+
+### Patch Changes
+
+- 05883d2: Updated packages
+
 ## 0.0.18
 
 ### Patch Changes
