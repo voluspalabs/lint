@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.20
+
+### Patch Changes
+
+- 8d589c1: Updated config version
+
 ## 0.0.19
 
 ### Patch Changes
