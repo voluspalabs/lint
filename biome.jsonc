@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
   "files": {
     "ignoreUnknown": false,
     "includes": [
@@ -72,7 +72,8 @@
         "useValidAriaValues": "error",
         "useValidAutocomplete": "error",
         "useValidLang": "error",
-        "useGenericFontNames": "error"
+        "useGenericFontNames": "error",
+        "noNoninteractiveElementInteractions": "error"
       },
       "complexity": {
         "noAdjacentSpacesInRegex": "error",
@@ -116,7 +117,9 @@
         "useSimpleNumberKeys": "error",
         //! This is intentionally off
         "useSimplifiedLogicExpression": "off",
-        "useWhile": "error"
+        "useWhile": "error",
+        "useIndexOf": "error",
+        "noImportantStyles": "error"
       },
       "correctness": {
         //! This is intentionally off because we use the children prop in our components. Example: UI Packages etc.
@@ -174,43 +177,25 @@
         "noUnknownPseudoElement": "error",
         "noUnknownTypeSelector": "error",
         "noUnknownUnit": "error",
-        "noUnmatchableAnbSelector": "error"
-      },
-      "nursery": {
-        "noAwaitInLoop": "error",
-        "noBitwiseOperators": "error",
-        "noConstantBinaryExpression": "error",
+        "noUnmatchableAnbSelector": "error",
         "noGlobalDirnameFilename": "error",
         "noNestedComponentDefinitions": "error",
-        "noNoninteractiveElementInteractions": "error",
-        "noReactPropAssign": "error",
+        "noReactPropAssignments": "error",
         "noRestrictedElements": "error",
-        //! This is intentionally off.
-        "noShadow": "off",
-        "noTsIgnore": "error",
-        "noUnwantedPolyfillio": "error",
-        "noUselessBackrefInRegex": "error",
-        "noUselessEscapeInString": "error",
-        "noUselessUndefined": "error",
-        "useAdjacentGetterSetter": "error",
-        "useConsistentObjectDefinition": "error",
-        "useConsistentResponse": "error",
-        "useExhaustiveSwitchCases": "error",
-        "useGoogleFontPreconnect": "error",
-        "useIndexOf": "error",
-        "useIterableCallbackReturn": "error",
-        "useJsonImportAttribute": "error",
-        "useNumericSeparators": "error",
-        "useObjectSpread": "error",
+        "useJsonImportAttributes": "error",
         "useParseIntRadix": "error",
         "useSingleJsDocAsterisk": "error",
-        "useSymbolDescription": "error",
-        "noDestructuredProps": "off",
+        "noSolidDestructuredProps": "off",
         "noProcessGlobal": "off",
+        "useUniqueElementIds": "off"
+      },
+      "nursery": {
+        //! This is intentionally off.
+        "noShadow": "off",
+        "noUselessUndefined": "error",
+        "useExhaustiveSwitchCases": "error",
         "noSecrets": "off",
         "useExplicitType": "off",
-        "useExportsLast": "off",
-        "useForComponent": "off",
         "useSortedClasses": {
           "fix": "safe",
           "level": "error",
@@ -219,12 +204,9 @@
             "functions": ["clsx", "cva", "tw", "twMerge", "cn", "twJoin", "tv"]
           }
         },
-        "useUniqueElementIds": "off",
         "noFloatingPromises": "off",
         "noUnresolvedImports": "off",
-        "noImportCycles": "off",
-        "noImportantStyles": "error",
-        "noUnknownAtRule": "error"
+        "noImportCycles": "off"
       },
       "performance": {
         "noAccumulatingSpread": "error",
@@ -235,7 +217,11 @@
         "noNamespaceImport": "off",
         "useTopLevelRegex": "error",
         "noBarrelFile": "warn",
-        "noReExportAll": "warn"
+        "noReExportAll": "warn",
+        "noUnwantedPolyfillio": "error",
+        "useGoogleFontPreconnect": "error",
+        "useSolidForComponent": "off",
+        "noAwaitInLoops": "error"
       },
       "security": {
         "noBlankTarget": "error",
@@ -311,7 +297,13 @@
         "useNamingConvention": "off",
         "useSingleVarDeclarator": "off",
         "noDescendingSpecificity": "error",
-        "noValueAtRule": "error"
+        "noValueAtRule": "error",
+        "useGroupedAccessorPairs": "error",
+        "useConsistentObjectDefinitions": "error",
+        "useNumericSeparators": "error",
+        "useObjectSpread": "error",
+        "useSymbolDescription": "error",
+        "useExportsLast": "off"
       },
       "suspicious": {
         "noApproximativeNumericConstant": "error",
@@ -398,7 +390,15 @@
         "noDuplicateSelectorsKeyframeBlock": "error",
         "noEmptyBlock": "error",
         "noImportantInKeyframe": "error",
-        "noShorthandPropertyOverrides": "error"
+        "noShorthandPropertyOverrides": "error",
+        "noBitwiseOperators": "error",
+        "noConstantBinaryExpressions": "error",
+        "noTsIgnore": "error",
+        "noUselessEscapeInString": "error",
+        "useStaticResponseMethods": "error",
+        "useIterableCallbackReturn": "error",
+        "noUnknownAtRules": "error",
+        "noUselessRegexBackrefs": "error"
       }
     }
   },
