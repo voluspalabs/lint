@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.23
+
+### Patch Changes
+
+- fdc56aa: Biome upgrade
+
 ## 0.0.22
 
 ### Patch Changes
