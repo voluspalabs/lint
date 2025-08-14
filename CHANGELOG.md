@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.22
+
+### Patch Changes
+
+- e5f6580: Biome 2.0 update
+
 ## 0.0.21
 
 ### Patch Changes
