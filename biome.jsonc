@@ -400,6 +400,10 @@
         "noUnknownAtRules": "error",
         "noUselessRegexBackrefs": "error"
       }
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
     }
   },
   "javascript": {

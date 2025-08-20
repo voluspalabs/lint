@@ -30,13 +30,14 @@
   "scripts": {
     "clean": "bunx del-cli ./dist",
     "ci": "bun run biome ci",
-    "check-format": "biome check --write",
+    "lint": "biome check",
+    "format": "biome format --write",
     "ver": "changeset",
     "local-release": "bun run ci && changeset version && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",
-    "@changesets/cli": "^2.29.5"
+    "@changesets/cli": "^2.29.6"
   },
   "engines": {
     "node": ">=20.0.0"
