@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.24
+
+### Patch Changes
+
+- 278b322: Updated some rules for new version of NextJS
+
 ## 0.0.23
 
 ### Patch Changes
