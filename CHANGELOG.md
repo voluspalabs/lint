@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.29
+
+### Patch Changes
+
+- 31ab0c1: Minor config updates
+
 ## 0.0.28
 
 ### Patch Changes
