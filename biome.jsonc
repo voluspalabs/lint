@@ -1,14 +1,49 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.1/schema.json",
   "files": {
-    "ignoreUnknown": false,
+    "ignoreUnknown": true,
     "includes": [
-      "**",
-      "!**/node_modules/",
-      "!**/dist/",
-      "!**/.next/",
-      "!**/build/",
-      "!**/.turbo/"
+      "**/*",
+      "!**/_generated/**/*",
+      "!**/*.gen.*",
+      "!**/.next/**/*",
+      "!**/next-env.d.ts",
+      "!**/.nuxt/**/*",
+      "!**/.output/**/*",
+      "!**/.svelte-kit/**/*",
+      "!**/.vitepress/cache/**/*",
+      "!**/.vitepress/dist/**/*",
+      "!**/dist/**/*",
+      "!**/build/**/*",
+      "!**/out/**/*",
+      "!**/.turbo/**/*",
+      "!**/.vercel/**/*",
+      "!**/.netlify/**/*",
+      "!**/storybook-static/**/*",
+      "!**/.docusaurus/**/*",
+      "!**/.cache/**/*",
+      "!**/public/build/**/*",
+      "!**/.parcel-cache/**/*",
+      "!**/.vite/**/*",
+      "!**/.astro/**/*",
+      "!**/_astro/**/*",
+      "!**/coverage/**/*",
+      "!**/.nyc_output/**/*",
+      "!**/*.generated.*",
+      "!**/*.auto.*",
+      "!**/generated/**/*",
+      "!**/auto-generated/**/*",
+      "!**/codegen/**/*",
+      "!**/__generated__/**/*",
+      "!**/graphql-types.*",
+      "!**/schema.d.ts",
+      "!**/schema.graphql.d.ts",
+      "!**/*.d.ts.map",
+      "!**/.expo/**/*",
+      "!**/.expo-shared/**/*",
+      "!**/android/build/**/*",
+      "!**/ios/build/**/*",
+      "!**/DerivedData/**/*"
     ]
   },
   "formatter": {
@@ -35,12 +70,10 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "a11y": {
         "noAccessKey": "error",
         "noAriaHiddenOnFocusable": "error",
         "noAriaUnsupportedElements": "error",
-        // ! This is intentionally off.
         "noAutofocus": "off",
         "noDistractingElements": "error",
         "noHeaderScope": "error",
@@ -120,7 +153,9 @@
         "useSimplifiedLogicExpression": "off",
         "useWhile": "error",
         "useIndexOf": "error",
-        "noImportantStyles": "error"
+        "noImportantStyles": "error",
+        "noExcessiveLinesPerFunction": "off",
+        "noImplicitCoercions": "off"
       },
       "correctness": {
         //! This is intentionally off because we use the children prop in our components. Example: UI Packages etc.
@@ -188,14 +223,15 @@
         "useSingleJsDocAsterisk": "error",
         "noSolidDestructuredProps": "off",
         "noProcessGlobal": "off",
-        "useUniqueElementIds": "off"
+        "useUniqueElementIds": "off",
+        "useGraphqlNamedOperations": "error",
+        "useImageSize": "error"
       },
       "nursery": {
         //! This is intentionally off.
         "noShadow": "off",
         "noUselessUndefined": "error",
         "useExhaustiveSwitchCases": "error",
-        "noSecrets": "off",
         "useExplicitType": "off",
         "useSortedClasses": {
           "fix": "safe",
@@ -208,7 +244,18 @@
         "noFloatingPromises": "off",
         "noUnresolvedImports": "off",
         "noImportCycles": "off",
-        "noDeprecatedImports": "error"
+        "noDeprecatedImports": "error",
+        "noNextAsyncClientComponent": "error",
+        "noReactForwardRef": "error",
+        "noDuplicateDependencies": "error",
+        "noEmptySource": "error",
+        "noUnusedExpressions": "error",
+        "useConsistentArrowReturn": "error",
+        "useDeprecatedDate": "error",
+        "useMaxParams": "error",
+        "noJsxLiterals": "off",
+        "noUselessCatchBinding": "off",
+        "noUnnecessaryConditions": "off"
       },
       "performance": {
         "noAccumulatingSpread": "error",
@@ -218,24 +265,23 @@
         //! This is intentionally off.
         "noNamespaceImport": "off",
         "useTopLevelRegex": "error",
-        "noBarrelFile": "warn",
-        "noReExportAll": "warn",
+        "noBarrelFile": "error",
+        "noReExportAll": "off",
         "noUnwantedPolyfillio": "error",
         "useGoogleFontPreconnect": "error",
-        "useSolidForComponent": "off",
-        "noAwaitInLoops": "error"
+        "noAwaitInLoops": "off"
       },
       "security": {
         "noBlankTarget": "error",
         "noDangerouslySetInnerHtml": "error",
         "noDangerouslySetInnerHtmlWithChildren": "error",
-        "noGlobalEval": "error"
+        "noGlobalEval": "error",
+        "noSecrets": "off"
       },
       "style": {
         "noDoneCallback": "error",
         "noEnum": "error",
         "noExportedImports": "error",
-        "noHeadElement": "error",
         "noInferrableTypes": "error",
         "noNamespace": "error",
         "noNegationElse": "error",
@@ -271,9 +317,12 @@
           "level": "error",
           "options": {
             "requireAscii": true,
-            "filenameCases": ["kebab-case"],
-            "match": "[\\-$]?(.+?)[.](.+)"
+            "filenameCases": ["kebab-case"]
           }
+        },
+        "useConsistentTypeDefinitions": {
+          "level": "error",
+          "options": { "style": "type" }
         },
         "useForOf": "error",
         "useFragmentSyntax": "error",
@@ -305,11 +354,16 @@
         "useNumericSeparators": "error",
         "useObjectSpread": "error",
         "useSymbolDescription": "error",
-        "useExportsLast": "off"
+        "useExportsLast": "off",
+        "noMagicNumbers": "error",
+        "useDeprecatedReason": "error",
+        "useGraphqlNamingConvention": "error",
+        "useReadonlyClassProperties": "error",
+        "useUnifiedTypeSignatures": "error"
       },
       "suspicious": {
         "noApproximativeNumericConstant": "error",
-        "noArrayIndexKey": "warn",
+
         "noAssignInExpressions": "error",
         "noAsyncPromiseExecutor": "error",
         "noCatchAssign": "error",
@@ -318,17 +372,11 @@
         "noCompareNegZero": "error",
         "noConfusingLabels": "error",
         "noConfusingVoidType": "error",
-        "noConsole": {
-          "level": "error",
-          "options": {
-            "allow": ["error"]
-          }
-        },
+        "noConsole": "error",
         "noConstEnum": "error",
         "noControlCharactersInRegex": "error",
         "noDebugger": "error",
         "noDocumentCookie": "error",
-        "noDocumentImportInPage": "error",
         "noDoubleEquals": "error",
         "noDuplicateCase": "error",
         "noDuplicateClassMembers": "error",
@@ -349,7 +397,6 @@
         "noGlobalAssign": "error",
         "noGlobalIsFinite": "error",
         "noGlobalIsNan": "error",
-        "noHeadImportInDocument": "error",
         "noImplicitAnyLet": "error",
         "noImportAssign": "error",
         "noIrregularWhitespace": "error",
@@ -366,7 +413,6 @@
         "noShadowRestrictedNames": "error",
         "noSkippedTests": "error",
         "noSparseArray": "error",
-        "noSuspiciousSemicolonInJsx": "error",
         "noTemplateCurlyInString": "error",
         "noThenProperty": "error",
         "noUnsafeDeclarationMerging": "error",
@@ -384,7 +430,6 @@
         "useNamespaceKeyword": "error",
         "useNumberToFixedDigitsArgument": "error",
         "useStrictMode": "error",
-        "noReactSpecificProps": "off",
         "noDuplicateAtImportRules": "error",
         "noDuplicateCustomProperties": "error",
         "noDuplicateFontNames": "error",
@@ -400,14 +445,21 @@
         "useStaticResponseMethods": "error",
         "useIterableCallbackReturn": "error",
         "noUnknownAtRules": "error",
-        "noUselessRegexBackrefs": "error"
+        "noUselessRegexBackrefs": "error",
+        "noAlert": "error",
+        "noBiomeFirstException": "error",
+        "noDuplicateFields": "error",
+        "noQuickfixBiome": "error",
+        "noUnassignedVariables": "error",
+        "useBiomeIgnoreFolder": "error",
+        "noNonNullAssertedOptionalChain": "error"
       }
-    },
-    "domains": {
-      "project": "recommended",
-      "next": "recommended",
-      "react": "recommended"
     }
+    // "domains": {
+    //   "project": "recommended",
+    //   "next": "recommended",
+    //   "react": "recommended"
+    // }
   },
   "javascript": {
     "formatter": {
@@ -437,7 +489,8 @@
     },
     "parser": {
       "allowWrongLineComments": false,
-      "cssModules": false
+      "cssModules": false,
+      "tailwindDirectives": true
     }
   },
   "json": {
@@ -460,10 +513,150 @@
       "allowTrailingCommas": false
     }
   },
+  "html": {
+    "formatter": {
+      "enabled": true
+    }
+  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true,
     "defaultBranch": "main"
-  }
+  },
+  "overrides": [
+    {
+      // Configuration files that often need default exports
+      "includes": [
+        "*.config.{js,ts,mjs,cjs,mts,cts}",
+        "vite.config.*",
+        "vitest.config.*",
+        "jest.config.*",
+        "rollup.config.*",
+        "webpack.config.*",
+        "eslint.config.*",
+        "prettier.config.*",
+        "stylelint.config.*",
+        "commitlint.config.*",
+        "lint-staged.config.*",
+        "postcss.config.*",
+        "tailwind.config.*",
+        "playwright.config.*",
+        "cypress.config.*",
+        "babel.config.*",
+        "metro.config.*",
+        "next.config.*",
+        "nuxt.config.*",
+        "astro.config.*",
+        "svelte.config.*",
+        "tsup.config.*"
+      ]
+    },
+    {
+      // Test files
+      "includes": ["**/*.{test,spec}.{ts,tsx,js,jsx}", "**/__tests__/**/*"],
+      "linter": {
+        "rules": {
+          "complexity": {
+            "noExcessiveCognitiveComplexity": "off"
+          },
+          "suspicious": {
+            "noConsole": "off",
+            "noExplicitAny": "off"
+          }
+        }
+      }
+    },
+    {
+      // Scripts and CLI tools
+      "includes": ["**/scripts/**/*", "**/bin/**/*", "*.mjs", "*.cjs"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
+          },
+          "style": {
+            "noProcessEnv": "off"
+          }
+        }
+      }
+    },
+    {
+      // Storybook files
+      "includes": ["**/*.{stories,story}.{ts,tsx,js,jsx}"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    },
+    {
+      // Environment and type definition files
+      "includes": ["**/*.d.ts", "**/{env,global,types}.d.ts"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUndeclaredVariables": "off"
+          }
+        }
+      }
+    },
+    {
+      // Files that should not be processed (build output, generated files, non-JS files)
+      "includes": [
+        "**/dist/**/*",
+        "**/build/**/*",
+        "**/.next/**/*",
+        "**/.nuxt/**/*",
+        "**/out/**/*",
+        "**/coverage/**/*",
+        "**/*.min.js",
+        "**/*.min.css",
+        "**/*.md",
+        "**/*.mdx",
+        "**/*.graphql",
+        "**/*.gql",
+        ".env",
+        ".env.*"
+      ],
+      "formatter": {
+        "enabled": false
+      },
+      "linter": {
+        "enabled": false
+      }
+    },
+    {
+      // Package.json and similar JSON config files
+      "includes": [
+        "package.json",
+        "{tsconfig,jsconfig}.json",
+        "tsconfig.*.json",
+        ".vscode/*.json",
+        ".github/**/*.json"
+      ],
+      "json": {
+        "parser": {
+          "allowComments": true,
+          "allowTrailingCommas": true
+        }
+      }
+    },
+
+    // NextJS
+    {
+      "includes": ["next.config.*"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "useAwait": "off"
+          }
+        }
+      }
+    }
+  ]
 }
