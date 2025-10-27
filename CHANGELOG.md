@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.30
+
+### Patch Changes
+
+- 836d69c: Updated biome and changed rules!
+
 ## 0.0.29
 
 ### Patch Changes
