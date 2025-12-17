@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
   "files": {
     "ignoreUnknown": true,
     "includes": [
@@ -255,7 +255,31 @@
         "useMaxParams": "error",
         "noJsxLiterals": "off",
         "noUselessCatchBinding": "off",
-        "noUnnecessaryConditions": "off"
+        "noUnnecessaryConditions": "off",
+        "noDuplicatedSpreadProps": "error",
+        "noEqualsToNull": "error",
+        "noIncrementDecrement": {
+          "level": "error",
+          "options": { "allowForLoopAfterthoughts": true }
+        },
+        "noLeakedRender": "error",
+        "noMultiStr": "error",
+        "noParametersOnlyUsedInRecursion": "error",
+        "noProto": "error",
+        "noScriptUrl": "error",
+        "noSyncScripts": "error",
+        "useAwaitThenable": "error",
+        "useConsistentGraphqlDescriptions": "error",
+        "useFind": "error",
+        "useRegexpExec": "error",
+        "useSpread": "error",
+        "useUniqueGraphqlOperationName": "error",
+        "noContinue": "off",
+        "noForIn": "off",
+        "noTernary": "off",
+        "useArraySortCompare": "off",
+        "useRequiredScripts": "off",
+        "noMisusedPromises": "off"
       },
       "performance": {
         "noAccumulatingSpread": "error",
@@ -359,11 +383,12 @@
         "useDeprecatedReason": "error",
         "useGraphqlNamingConvention": "error",
         "useReadonlyClassProperties": "error",
-        "useUnifiedTypeSignatures": "error"
+        "useUnifiedTypeSignatures": "error",
+        "useReactFunctionComponents": "error",
+        "noHeadElement": "error"
       },
       "suspicious": {
         "noApproximativeNumericConstant": "error",
-
         "noAssignInExpressions": "error",
         "noAsyncPromiseExecutor": "error",
         "noCatchAssign": "error",
@@ -452,7 +477,12 @@
         "noQuickfixBiome": "error",
         "noUnassignedVariables": "error",
         "useBiomeIgnoreFolder": "error",
-        "noNonNullAssertedOptionalChain": "error"
+        "noNonNullAssertedOptionalChain": "error",
+        "noArrayIndexKey": "error",
+        "noSuspiciousSemicolonInJsx": "error",
+        "noReactSpecificProps": "off",
+        "noDocumentImportInPage": "error",
+        "noHeadImportInDocument": "error"
       }
     }
     // "domains": {
