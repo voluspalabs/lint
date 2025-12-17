@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.33
+
+### Patch Changes
+
+- 856eedc: Update packages and new rules added
+
 ## 0.0.32
 
 ### Patch Changes
