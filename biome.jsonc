@@ -268,7 +268,8 @@
         "noProto": "error",
         "noScriptUrl": "error",
         "noSyncScripts": "error",
-        "useAwaitThenable": "error",
+        // ! This is intentionally off.
+        "useAwaitThenable": "off",
         "useConsistentGraphqlDescriptions": "error",
         "useFind": "error",
         "useRegexpExec": "error",
