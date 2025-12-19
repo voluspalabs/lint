@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.34
+
+### Patch Changes
+
+- 6aeb489: Update useAwaitThenable rule to off
+
 ## 0.0.33
 
 ### Patch Changes
