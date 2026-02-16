@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.12/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.1/schema.json",
   "files": {
     "ignoreUnknown": true,
     "includes": [
@@ -64,7 +64,9 @@
         "organizeImports": "on",
         "useSortedAttributes": "on",
         "useSortedProperties": "on", // For CSS
-        "useSortedKeys": "off"
+        "useSortedKeys": "off",
+        "noDuplicateClasses": "on",
+        "useSortedInterfaceMembers": "on"
       }
     }
   },
@@ -125,6 +127,7 @@
         "noStaticOnlyClass": "error",
         "noThisInStatic": "error",
         "noUselessCatch": "error",
+        "noUselessCatchBinding": "off",
         "noUselessConstructor": "error",
         "noUselessContinue": "error",
         "noUselessEmptyExport": "error",
@@ -139,6 +142,7 @@
         "noUselessTernary": "error",
         "noUselessThisAlias": "error",
         "noUselessTypeConstraint": "error",
+        "noUselessUndefined": "error",
         "noUselessUndefinedInitialization": "error",
         //! This is intentionally off.
         "noVoid": "off",
@@ -146,6 +150,7 @@
         "useDateNow": "error",
         "useFlatMap": "error",
         "useLiteralKeys": "error",
+        "useMaxParams": "error",
         "useNumericLiterals": "error",
         "useOptionalChain": "error",
         "useRegexLiterals": "error",
@@ -172,6 +177,7 @@
         "noInvalidBuiltinInstantiation": "error",
         "noInvalidConstructorSuper": "error",
         "noInvalidUseBeforeDeclaration": "error",
+        "noNextAsyncClientComponent": "error",
         "noNonoctalDecimalEscape": "error",
         "noPrecisionLoss": "error",
         "noRenderReturnValue": "error",
@@ -182,10 +188,11 @@
         "noUndeclaredVariables": "error",
         "noUnreachable": "error",
         "noUnreachableSuper": "error",
+        "noUnresolvedImports": "off",
         "noUnsafeFinally": "error",
         "noUnsafeOptionalChaining": "error",
         "noUnusedFunctionParameters": "error",
-        "noUnusedImports": "error",
+        "noUnusedImports": { "fix": "safe", "level": "error" },
         "noUnusedLabels": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
@@ -207,7 +214,12 @@
         "noInvalidGridAreas": "error",
         "noInvalidPositionAtImportRule": "error",
         "noMissingVarFunction": "error",
-        "noUnknownFunction": "error",
+        "noUnknownFunction": {
+          "level": "error",
+          "options": {
+            "ignore": ["theme", "screen"]
+          }
+        },
         "noUnknownMediaFeatureName": "error",
         "noUnknownProperty": "error",
         "noUnknownPseudoClass": "error",
@@ -231,7 +243,6 @@
       "nursery": {
         //! This is intentionally off.
         "noShadow": "off",
-        "noUselessUndefined": "error",
         "useExhaustiveSwitchCases": "error",
         "useExplicitType": "off",
         "useSortedClasses": {
@@ -243,19 +254,6 @@
           }
         },
         "noFloatingPromises": "off",
-        "noUnresolvedImports": "off",
-        "noImportCycles": "off",
-        "noDeprecatedImports": "error",
-        "noNextAsyncClientComponent": "error",
-        "noReactForwardRef": "error",
-        "noDuplicateDependencies": "error",
-        "noEmptySource": "error",
-        "noUnusedExpressions": "error",
-        "useConsistentArrowReturn": "error",
-        "useDeprecatedDate": "error",
-        "useMaxParams": "error",
-        "noJsxLiterals": "off",
-        "noUselessCatchBinding": "off",
         "noUnnecessaryConditions": "off",
         "noDuplicatedSpreadProps": "error",
         "noEqualsToNull": "error",
@@ -280,7 +278,30 @@
         "noTernary": "off",
         "useArraySortCompare": "off",
         "useRequiredScripts": "off",
-        "noMisusedPromises": "off"
+        "noMisusedPromises": "off",
+        "noBeforeInteractiveScriptOutsideDocument": "error",
+        "useInlineScriptId": "error",
+        "noNestedPromises": "error",
+        "noReturnAssign": "error",
+        "noRedundantDefaultExport": "error",
+        "useGlobalThis": "error",
+        "noUselessReturn": "error",
+        "noMultiAssign": "error",
+        "useErrorCause": "error",
+        "noJsxPropsBind": "error",
+        "noAmbiguousAnchorText": "error",
+        "noDuplicateEnumValues": "error",
+        "useConsistentEnumValueType": "error",
+        "useConsistentMethodSignatures": "error",
+        "noDivRegex": "error",
+        "noDeprecatedMediaType": "error",
+        "noDuplicateArgumentNames": "error",
+        "noDuplicateEnumValueNames": "error",
+        "noDuplicateFieldDefinitionNames": "error",
+        "noDuplicateGraphqlOperationName": "error",
+        "noDuplicateInputFieldNames": "error",
+        "noDuplicateVariableNames": "error",
+        "useLoneAnonymousOperation": "error"
       },
       "performance": {
         "noAccumulatingSpread": "error",
@@ -308,6 +329,7 @@
         "noEnum": "error",
         "noExportedImports": "error",
         "noInferrableTypes": "error",
+        "noJsxLiterals": "off",
         "noNamespace": "error",
         "noNegationElse": "error",
         //! This is intentionally off.
@@ -326,10 +348,11 @@
         "useArrayLiterals": "error",
         "useAsConstAssertion": "error",
         "useAtIndex": "error",
-        "useBlockStatements": "error",
+        "useBlockStatements": { "fix": "safe", "level": "error" },
         "useCollapsedElseIf": "error",
         "useCollapsedIf": "error",
         "useConsistentArrayType": "error",
+        "useConsistentArrowReturn": "error",
         "useConsistentBuiltinInstantiation": "error",
         "useConsistentMemberAccessibility": "error",
         "useConst": "error",
@@ -402,10 +425,12 @@
         "noConstEnum": "error",
         "noControlCharactersInRegex": "error",
         "noDebugger": "error",
+        "noDeprecatedImports": "error",
         "noDocumentCookie": "error",
         "noDoubleEquals": "error",
         "noDuplicateCase": "error",
         "noDuplicateClassMembers": "error",
+        "noDuplicateDependencies": "error",
         "noDuplicateElseIf": "error",
         "noDuplicateJsxProps": "error",
         "noDuplicateObjectKeys": "error",
@@ -413,6 +438,7 @@
         "noDuplicateTestHooks": "error",
         "noEmptyBlockStatements": "error",
         "noEmptyInterface": "error",
+        "noEmptySource": "error",
         "noEvolvingTypes": "error",
         "noExplicitAny": "error",
         "noExportsInTest": "error",
@@ -425,6 +451,7 @@
         "noGlobalIsNan": "error",
         "noImplicitAnyLet": "error",
         "noImportAssign": "error",
+        "noImportCycles": "off",
         "noIrregularWhitespace": "error",
         "noLabelVar": "error",
         "noMisleadingCharacterClass": "error",
@@ -433,6 +460,7 @@
         "noMisrefactoredShorthandAssign": "error",
         "noOctalEscape": "error",
         "noPrototypeBuiltins": "error",
+        "noReactForwardRef": "error",
         "noRedeclare": "error",
         "noRedundantUseStrict": "error",
         "noSelfCompare": "error",
@@ -443,11 +471,13 @@
         "noThenProperty": "error",
         "noUnsafeDeclarationMerging": "error",
         "noUnsafeNegation": "error",
+        "noUnusedExpressions": "error",
         "noVar": "error",
         "noWith": "error",
         "useAdjacentOverloadSignatures": "error",
         "useAwait": "error",
         "useDefaultSwitchClauseLast": "error",
+        "useDeprecatedDate": "error",
         "useErrorMessage": "error",
         "useGetterReturn": "error",
         "useGoogleFontDisplay": "error",
@@ -493,6 +523,7 @@
     // }
   },
   "javascript": {
+    "experimentalEmbeddedSnippetsEnabled": true,
     "formatter": {
       "arrowParentheses": "always",
       "attributePosition": "auto",
@@ -681,6 +712,17 @@
     // NextJS
     {
       "includes": ["next.config.*"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "useAwait": "off"
+          }
+        }
+      }
+    },
+    {
+      // Next.js page and layout files - async functions without await are common
+      "includes": ["**/page.{ts,tsx,js,jsx}", "**/layout.{ts,tsx,js,jsx}"],
       "linter": {
         "rules": {
           "suspicious": {
