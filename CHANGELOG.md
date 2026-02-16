@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.36
+
+### Patch Changes
+
+- 85676ff: Updated config with new rules and version
+
 ## 0.0.35
 
 ### Patch Changes
