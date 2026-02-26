@@ -1,6 +1,6 @@
 {
   "name": "@voluspalabs/lint",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "A strict and opinionated linting and formatting configuration for TypeScript, powered by Biome, Oxlint, and Oxfmt. Enforces maximum type safety and code quality.",
   "keywords": [
     "biome",

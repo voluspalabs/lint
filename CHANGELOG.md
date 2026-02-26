@@ -1,5 +1,11 @@
 # @voluspalabs/lint
 
+## 0.0.37
+
+### Patch Changes
+
+- de16871: Oxlint + Oxfmt Support & package update
+
 ## 0.0.36
 
 ### Patch Changes
