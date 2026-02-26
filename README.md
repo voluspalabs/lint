@@ -1,95 +1,121 @@
 # @voluspalabs/lint
 
-@voluspalabs/lint is a strict and opinionated linting configuration for modern TypeScript applications, powered by [Biome](https://biomejs.dev). It enforces maximum type safety and code quality, ensuring a clean and consistent codebase. Once set up, it automatically lints, fixes, and formats your code on save.
+A strict and opinionated linting and formatting configuration for modern TypeScript applications, powered by [Biome](https://biomejs.dev), [Oxlint](https://oxc.rs), and [Oxfmt](https://oxc.rs).
 
 ## Installation
 
-Install the package via npm:
+Install the package and the tools you want to use:
 
-```zsh
-pnpm add -D --save-exact @voluspalabs/lint @biomejs/biome
-```
-
-Or via Bun:
+### Biome (recommended)
 
 ```zsh
 bun add -D --save-exact @voluspalabs/lint @biomejs/biome
 ```
 
-If you’re using VS Code, ensure these extensions are installed:
+### Oxlint + Oxfmt
 
 ```zsh
-code --install-extension biomejs.biome
-code --install-extension bradlc.vscode-tailwindcss
+bun add -D --save-exact @voluspalabs/lint oxlint oxfmt
+```
+
+### All tools
+
+```zsh
+bun add -D --save-exact @voluspalabs/lint @biomejs/biome oxlint oxfmt
 ```
 
 ## Setup
 
-Create a biome.json file with the following content:
+### Biome
+
+Create a `biome.jsonc` (or `biome.json`) with:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.1/schema.json",
   "extends": ["@voluspalabs/lint"]
 }
 ```
 
-@voluspalabs/lint is optimized for VS Code. To enable full formatting and fixing on save, create a .vscode/settings.json file with the following content:
+### Oxlint
+
+Create a `.oxlintrc.json` with:
 
 ```json
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["./node_modules/@voluspalabs/lint/.oxlintrc.json"]
+}
+```
+
+> **Note:** Oxlint does not support Node.js package exports in `extends`. The explicit `./node_modules/` path is required.
+
+### Oxfmt
+
+Oxfmt does not support an `extends` mechanism. Copy the provided config into your project root:
+
+```zsh
+cp node_modules/@voluspalabs/lint/.oxfmtrc.jsonc .oxfmtrc.jsonc
+```
+
+## VS Code
+
+### Biome
+
+Install the extension and configure format-on-save:
+
+```zsh
+code --install-extension biomejs.biome
+```
+
+```json
+{
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "emmet.showExpandedAbbreviation": "never",
   "editor.codeActionsOnSave": {
     "source.fixAll.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  }
+  "[typescript]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[typescriptreact]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[javascript]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[json]": { "editor.defaultFormatter": "biomejs.biome" },
+  "[jsonc]": { "editor.defaultFormatter": "biomejs.biome" }
 }
 ```
 
-Finally, make sure your tsconfig.json (if present) has strictNullChecks enabled.
+### Oxlint + Oxfmt
+
+```zsh
+code --install-extension oxc.oxc-vscode
+```
 
 ```json
 {
-  "compilerOptions": {
-    "strictNullChecks": true
-  }
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "[typescript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "oxc.oxc-vscode" }
 }
 ```
 
 ## Usage
 
-@voluspalabs/lint automatically lints, fixes, and formats your code on save. To run it manually, use the following command:
+### Biome
 
 ```zsh
-biome check
+biome check           # lint + format check
+biome check --write   # lint + format + fix
 ```
 
-Or with changes:
+### Oxlint + Oxfmt
 
 ```zsh
-biome check --write
+oxlint                # lint
+oxfmt --check         # format check
+oxfmt --write         # format + fix
 ```
-
-You can disable specific rules per line by appending a [comment at the end](https://biomejs.dev/linter/#ignore-code).
 
 ## License
 

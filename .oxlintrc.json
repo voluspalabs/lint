@@ -1,0 +1,193 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "eslint",
+    "typescript",
+    "unicorn",
+    "oxc",
+    "import",
+    "jsdoc",
+    "node",
+    "promise",
+    "jest",
+    "vitest",
+    "react",
+    "react-perf",
+    "jsx-a11y",
+    "nextjs"
+  ],
+  "env": {
+    "browser": true
+  },
+  "categories": {
+    "correctness": "error",
+    "perf": "error",
+    "restriction": "error",
+    "suspicious": "error",
+    "pedantic": "error",
+    "style": "error"
+  },
+  "ignorePatterns": [
+    "_generated/**",
+    "*.gen.*",
+    ".next/**",
+    "next-env.d.ts",
+    ".nuxt/**",
+    ".output/**",
+    ".svelte-kit/**",
+    ".vitepress/cache/**",
+    ".vitepress/dist/**",
+    "dist/**",
+    "build/**",
+    "out/**",
+    ".turbo/**",
+    ".vercel/**",
+    ".netlify/**",
+    "storybook-static/**",
+    ".docusaurus/**",
+    ".cache/**",
+    "public/build/**",
+    ".parcel-cache/**",
+    ".vite/**",
+    ".astro/**",
+    "_astro/**",
+    "coverage/**",
+    ".nyc_output/**",
+    "*.generated.*",
+    "*.auto.*",
+    "generated/**",
+    "auto-generated/**",
+    "codegen/**",
+    "__generated__/**",
+    "graphql-types.*",
+    "schema.d.ts",
+    "schema.graphql.d.ts",
+    "*.d.ts.map",
+    ".expo/**",
+    ".expo-shared/**",
+    "android/build/**",
+    "ios/build/**",
+    "DerivedData/**",
+    ".claude/**"
+  ],
+  "rules": {
+    "no-await-in-loop": "off",
+    "max-lines-per-function": "off",
+    "no-implicit-coercion": "off",
+    "no-magic-numbers": "off",
+    "no-console": "error",
+    "no-ternary": "off",
+    "no-undefined": "off",
+    "max-lines": "off",
+    "id-length": "off",
+    "max-depth": "off",
+    "max-params": "off",
+    "capitalized-comments": "off",
+    "new-cap": "off",
+    "no-continue": "off",
+    "init-declarations": "off",
+    "sort-imports": "off",
+    "no-duplicate-imports": ["error", { "allowSeparateTypeImports": true }],
+    "func-style": ["error", "expression", { "allowArrowFunctions": true }],
+    "arrow-body-style": ["error", "as-needed"],
+
+    "import/no-default-export": "off",
+    "import/exports-last": "off",
+    "import/no-named-export": "off",
+    "import/max-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/no-namespace": "off",
+    "import/no-anonymous-default-export": "off",
+    "import/prefer-default-export": "off",
+    "import/group-exports": "off",
+    "import/no-commonjs": "off",
+    "import/unambiguous": "off",
+    "import/no-dynamic-require": "off",
+    "import/no-unassigned-import": "off",
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+
+    "jsdoc/require-param": "off",
+    "jsdoc/require-returns": "off",
+
+    "unicorn/explicit-length-check": "off",
+    "unicorn/no-array-callback-reference": "off",
+    "unicorn/no-process-exit": "off",
+    "unicorn/prefer-global-this": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prefer-top-level-await": "off",
+    "unicorn/prefer-string-raw": "off",
+
+    "typescript/explicit-module-boundary-types": "off",
+    "typescript/no-require-imports": "off",
+    "typescript/explicit-function-return-type": "off",
+    "typescript/no-var-requires": "off",
+    "typescript/require-await": "off",
+
+    "node/no-process-env": "off",
+
+    "oxc/no-map-spread": "off",
+    "oxc/no-async-await": "off",
+    "oxc/no-rest-spread-properties": "off",
+    "oxc/no-optional-chaining": "off",
+
+    "promise/catch-or-return": "off",
+    "promise/always-return": "off",
+
+    "vitest/prefer-called-times": "off",
+
+    "react/only-export-components": "off",
+    "react/jsx-boolean-value": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-max-depth": "off",
+    "react/no-multi-comp": "off",
+
+    "react_perf/jsx-no-jsx-as-prop": "off",
+    "react_perf/jsx-no-new-object-as-prop": "off",
+    "react_perf/jsx-no-new-array-as-prop": "off",
+
+    "jsx-a11y/no-autofocus": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.{ts,tsx,js,jsx}",
+        "**/*.spec.{ts,tsx,js,jsx}",
+        "**/__tests__/**/*"
+      ],
+      "rules": {
+        "no-console": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["**/scripts/**/*", "**/bin/**/*", "*.mjs", "*.cjs"],
+      "rules": {
+        "no-console": "off",
+        "node/no-process-env": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.{ts,tsx,js,jsx}", "**/*.story.{ts,tsx,js,jsx}"],
+      "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["**/next-env.d.ts"],
+      "rules": {
+        "import/no-unassigned-import": "off"
+      }
+    }
+  ]
+}

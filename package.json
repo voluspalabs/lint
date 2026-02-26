@@ -1,9 +1,11 @@
 {
   "name": "@voluspalabs/lint",
   "version": "0.0.36",
-  "description": "A strict and opinionated linting configuration for TypeScript, powered by Biome. Enforces maximum type safety and code quality, automatically linting, fixing, and formatting on save.",
+  "description": "A strict and opinionated linting and formatting configuration for TypeScript, powered by Biome, Oxlint, and Oxfmt. Enforces maximum type safety and code quality.",
   "keywords": [
     "biome",
+    "oxlint",
+    "oxfmt",
     "linter",
     "formatter",
     "fixer"
@@ -22,11 +24,19 @@
     "url": "git+https://github.com/voluspalabs/lint.git"
   },
   "files": [
-    "biome.jsonc"
+    "biome.jsonc",
+    ".oxlintrc.json",
+    ".oxfmtrc.jsonc"
   ],
   "type": "module",
   "license": "MIT",
   "main": "./biome.jsonc",
+  "exports": {
+    ".": "./biome.jsonc",
+    "./biome": "./biome.jsonc",
+    "./oxlint": "./.oxlintrc.json",
+    "./oxfmt": "./.oxfmtrc.jsonc"
+  },
   "scripts": {
     "clean": "bunx del-cli ./dist",
     "ci": "bun run biome ci",
@@ -36,8 +46,26 @@
     "local-release": "bun run ci && changeset version && changeset publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.1",
-    "@changesets/cli": "^2.29.8"
+    "@biomejs/biome": "^2.4.4",
+    "@changesets/cli": "^2.29.8",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": ">=2.0.0",
+    "oxfmt": ">=0.1.0",
+    "oxlint": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@biomejs/biome": {
+      "optional": true
+    },
+    "oxfmt": {
+      "optional": true
+    },
+    "oxlint": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=20.0.0"
